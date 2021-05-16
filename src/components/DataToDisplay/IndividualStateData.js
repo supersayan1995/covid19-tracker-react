@@ -26,7 +26,7 @@ const IndividualStateData = ()=>
           }
       });
       setIsLoading(false);
-    },[]);
+    },[statecode]);
 
     useEffect(()=>
     {
