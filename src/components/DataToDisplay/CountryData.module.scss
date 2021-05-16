@@ -1,0 +1,40 @@
+.countrywise-data
+{
+    background-color: #fff;
+    & table
+    {
+        & th
+        {
+            font-size:1.5rem;
+            text-align: center;
+        }
+        & .td-total
+        {
+            text-align: center;
+            font-size:1.2rem;
+            font-weight: bold;
+            color:#cf8700;
+        }
+        & .td-active
+        {
+            text-align: center;
+            font-size:1.2rem;
+            font-weight: bold;
+            color:maroon;
+        }
+        & .td-deaths
+        {
+            text-align: center;
+            font-size:1.2rem;
+            font-weight: bold;
+            color:red;
+        }
+        & .td-recovered
+        {
+            text-align: center;
+            font-size:1.2rem;
+            font-weight: bold;
+            color:green;
+        }
+    }
+}

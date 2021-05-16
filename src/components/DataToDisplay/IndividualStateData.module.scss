@@ -1,0 +1,30 @@
+.current-state-data
+{
+    background-color: #fff;
+    padding:20px;
+    & .state-name
+    {
+        text-align: center;
+        font-weight: bold;
+    }
+    & .state-confirmed
+    {
+        color:#cf8700;
+        font-weight: bold;
+    }
+    & .state-active
+    {
+        color:maroon;
+        font-weight: bold;
+    }
+    & .state-deaths
+    {
+        color:red;
+        font-weight:bold;
+    }
+    & .state-recovered
+    {
+        color:green;
+        font-weight:bold;
+    }
+}
