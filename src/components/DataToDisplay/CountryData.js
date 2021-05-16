@@ -84,7 +84,8 @@ const CountryData = ()=>
                 display:false
             }
         },
-        responsive:true
+        responsive:true,
+        maintainAspectRatio:false
     }
 
     return(

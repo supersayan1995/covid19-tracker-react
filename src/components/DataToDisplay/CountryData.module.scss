@@ -1,8 +1,11 @@
 .countrywise-data
 {
+    padding:10px 0;
+    height:100vh;
     background-color: #fff;
     & table
     {
+        height:5%;
         & th
         {
             font-size:1.5rem;
@@ -39,6 +42,8 @@
     }
     & .chart
     {
+        width:100%;
+        height:80%;
         position:relative;
     }
 }
@@ -47,8 +52,10 @@
 {
     .countrywise-data
     {
+        height:100vh;
         & table
         {
+            height:5%;
             & th
             {
                 font-size:0.8rem;
@@ -58,6 +65,10 @@
             {
                 font-size:0.7rem;
             }
+        }
+        & .chart
+        {
+            height:80%;
         }
     }
 }
