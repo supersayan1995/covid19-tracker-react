@@ -105,3 +105,27 @@ a
         }
     }
 }
+@media (max-width:480px)
+{
+    #footer-data
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .copyright
+        {
+            font-size:0.8rem;
+        }
+        & .social
+        {
+            & a
+            {
+                margin:3px;
+                & i
+                {
+                    font-size:0.8rem;
+                }
+            }
+        }
+    }
+}

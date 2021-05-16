@@ -2,12 +2,26 @@
 {
     margin:0;
     padding:0;
+    table
+    {
+        border-radius: 5px;
+        & #tbody
+        {
+            background: #fff;
+        }
+    }
 }
-#tbody
+@media (max-width:480px)
 {
-    background: #fff;
-}
-table
-{
-    border-radius: 5px;
+    #country-stats
+    {
+        table
+        {
+            border-radius: 5px;
+            & thead tr th
+            {
+                font-size:0.8rem;
+            }
+        }
+    }
 }

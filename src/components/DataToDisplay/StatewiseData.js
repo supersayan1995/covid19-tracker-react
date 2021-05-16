@@ -7,7 +7,7 @@ const StatewiseData = (props)=>
 {
     const match = useRouteMatch();
     return(
-        <tr>
+        <tr className={classes["statewise-row"]}>
             <td><Link to={`${match.url}/${props.statecode}`} className={classes["statewise-link"]}>{props.name}</Link></td>
             <td>{props.confirmed}</td>
             <td>{props.active}</td>

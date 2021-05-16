@@ -83,7 +83,8 @@ const CountryData = ()=>
             {
                 display:false
             }
-        }
+        },
+        responsive:true
     }
 
     return(
@@ -103,7 +104,9 @@ const CountryData = ()=>
                     </tr>
                 </tbody>
             </table>
-            <Line data={chartData} options={chartOptions}/>
+            <div className={classes["chart"]}>
+                <Line data={chartData} options={chartOptions}/>
+            </div>
         </div>
     );
 };

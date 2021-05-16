@@ -37,4 +37,27 @@
             color:green;
         }
     }
+    & .chart
+    {
+        position:relative;
+    }
+}
+
+@media (max-width:480px)
+{
+    .countrywise-data
+    {
+        & table
+        {
+            & th
+            {
+                font-size:0.8rem;
+                text-align: center;
+            }
+            & .td-total,& .td-active,& .td-deaths,& .td-recovered
+            {
+                font-size:0.7rem;
+            }
+        }
+    }
 }
