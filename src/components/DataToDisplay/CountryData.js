@@ -36,7 +36,7 @@ const CountryData = ()=>
         <td className={classes["td-total"]}>Data Loading...</td>
         <td className={classes["td-active"]}>Data Loading...</td>
         <td className={classes["td-deaths"]}>Data Loading...</td>
-        <td className={classes["td-recovered"]}>Data Loading...</td>;
+        <td className={classes["td-recovered"]}>Data Loading...</td>
       </Fragment>
     }
     if(!isLoading)
@@ -46,7 +46,7 @@ const CountryData = ()=>
         <td className={classes["td-total"]}>{countrywiseData.confirmed}</td>
         <td className={classes["td-active"]}>{countrywiseData.active}</td>
         <td className={classes["td-deaths"]}>{countrywiseData.deaths}</td>
-        <td className={classes["td-recovered"]}>{countrywiseData.recovered}</td>;
+        <td className={classes["td-recovered"]}>{countrywiseData.recovered}</td>
       </Fragment>
     }
 
