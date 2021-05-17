@@ -17,6 +17,12 @@
             font-size:1.2rem;
             font-weight: bold;
             color:#cf8700;
+            & .daily-confirmed
+            {
+                display:block;
+                font-size:0.8rem;
+                font-weight:bold; 
+            }
         }
         & .td-active
         {
@@ -31,6 +37,12 @@
             font-size:1.2rem;
             font-weight: bold;
             color:red;
+            & .daily-deceased
+            {
+                display: block;
+                font-size:0.8rem;
+                font-weight:bold;  
+            }
         }
         & .td-recovered
         {
@@ -38,6 +50,12 @@
             font-size:1.2rem;
             font-weight: bold;
             color:green;
+            & .daily-recovered
+            {
+                display:block;
+                font-size:0.8rem;
+                font-weight:bold;  
+            }
         }
     }
     & .chart

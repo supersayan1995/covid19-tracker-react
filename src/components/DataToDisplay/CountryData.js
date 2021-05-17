@@ -8,19 +8,23 @@ const CountryData = ()=>
     let content;
     const [countrywiseData,setCountrywiseData] = useState([]);
     const [labelsForCharts,setlabelsForCharts] = useState([]);
-    const [dailyConfirmed,setDailyConfirmed] = useState([]);
+    const [dailyConfirmedArr,setDailyConfirmedArr] = useState([]);
+    const [dailyNewCases,setDailyNewCases] = useState(0);
+    const [dailyDeceased,setDailyDeceased] = useState(0);
+    const [dailyRecovered,setDailyRecovered] = useState(0);
     const [isLoading,setIsLoading] = useState(false);
     const loadTotalCountryData = useCallback(async()=>
     {
       setIsLoading(true);
       const response = await fetch("https://api.covid19india.org/data.json");
       const data = await response.json();
-      const total = data.statewise.find((state)=>state.statecode==="TT");
-      const labels = data.cases_time_series.map(day=>day.date);
-      const noOfDailyConfirmed = data.cases_time_series.map(day=>day.dailyconfirmed);
-      setCountrywiseData(total);
-      setlabelsForCharts(labels);
-      setDailyConfirmed(noOfDailyConfirmed);
+      const timeSeries = data.cases_time_series;
+      setCountrywiseData(data.statewise.find((state)=>state.statecode==="TT"));
+      setlabelsForCharts(timeSeries.map(day=>day.date));
+      setDailyConfirmedArr(timeSeries.map(day=>day.dailyconfirmed));
+      setDailyNewCases(timeSeries[timeSeries.length-1].dailyconfirmed);
+      setDailyDeceased(timeSeries[timeSeries.length-1].dailydeceased);
+      setDailyRecovered(timeSeries[timeSeries.length-1].dailyrecovered);
       setIsLoading(false);
     },[]);
   
@@ -43,10 +47,10 @@ const CountryData = ()=>
     {
         content=
         <Fragment>
-        <td className={classes["td-total"]}>{countrywiseData.confirmed}</td>
+        <td className={classes["td-total"]}>{countrywiseData.confirmed} <span className={classes["daily-confirmed"]}>(+{dailyNewCases})</span></td>
         <td className={classes["td-active"]}>{countrywiseData.active}</td>
-        <td className={classes["td-deaths"]}>{countrywiseData.deaths}</td>
-        <td className={classes["td-recovered"]}>{countrywiseData.recovered}</td>
+        <td className={classes["td-deaths"]}>{countrywiseData.deaths} <span className={classes["daily-deceased"]}>(+{dailyDeceased})</span></td>
+        <td className={classes["td-recovered"]}>{countrywiseData.recovered} <span className={classes["daily-recovered"]}>(+{dailyRecovered})</span></td>
       </Fragment>
     }
 
@@ -57,7 +61,7 @@ const CountryData = ()=>
             datasets:
             [{
                 label:"Daily Confirmed",
-                data:dailyConfirmed,
+                data:dailyConfirmedArr,
                 backgroundColor:"#000",
                 borderColor:"#777"
             }]
